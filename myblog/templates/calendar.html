@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>Calendar</h2>
+    <div id="calendar"></div>
+
+    <!-- Include FullCalendar CSS from a CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+
+    <!-- Include jQuery and FullCalendar JS from CDNs -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+    <script>
+        $.noConflict();
+        jQuery(document).ready(function($) {
+            // Your fullCalendar initialization code
+            $('#calendar').fullCalendar({
+                // Configure your calendar options here
+                events: [
+                    {
+                        title: 'Sveti Nikola',
+                        start: '2024-12-19T10:00:00',
+                        end: '2024-12-19T12:00:00'
+                    },
+                    // Add more events if needed
+                ]
+            });
+        });
+    </script>
+{% endblock %}

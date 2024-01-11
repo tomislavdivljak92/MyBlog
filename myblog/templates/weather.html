@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>Weather</h2>
+    <div id="weather-info">
+        <p>Location: {{ weather_data.name }}, {{ weather_data.sys.country }}</p>
+        <p>Latitude: {{ weather_data.coord.lat }}</p>
+        <p>Longitude: {{ weather_data.coord.lon }}</p>
+        <p>Temperature: {{ weather_data.main.temp - 273.15 }} °C</p>
+        <p>Humidity: {{ weather_data.main.humidity }}%</p>
+        <p>Description: {{ weather_data.weather[0].description }}</p>
+    </div>
+
+    {% block additional_scripts %}
+        <script>
+            // You can keep your JavaScript logic here if needed
+        </script>
+    {% endblock %}
+{% endblock %}
